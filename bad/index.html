@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Feedback</title>
+  <style>
+    .form__group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Gino´s - Customer Feedback</h1>
+    <p>Geben sie uns Feedback zu Ihrem Aufenthalt.</p>
+  </div>
+
+  <div>
+    <form action="feedback.php" method="post">
+      <div>
+        <fieldset>
+          <legend>Persönliches</legend>
+          <div class="form__group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Max Muster" required>
+          </div>
+
+          <div class="form__group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="max.muster@example.com" required>
+          </div>
+        </fieldset>
+
+        <div class="form__group">
+          <label for="email">Feedback:</label>
+          <textarea type="email" name="email" placeholder="Ihr Feedback..." rows="8" required></textarea>
+        </div>
+      </div>
+      <button type="submit">Feedback absenden</button>
+    </form>
+  </div>
+</body>
+</html>
