@@ -1,11 +1,16 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $conn = include 'mysql.db.php';
+  include 'mysql.db.php';
 
-
-  $firstname = htmlspecialchars($POST['name'], ENT_QUOTES);
-  $email = htmlspecialchars($POST['email'], ENT_QUOTES);
-  $content = htmlspecialchars($POST['feedback'], ENT_QUOTES);
+  if(false) { // true: secure ¦ false: insecure
+    $firstname = htmlspecialchars($_POST['name'], ENT_QUOTES);
+    $email = htmlspecialchars($_POST['email'], ENT_QUOTES);
+    $content = htmlspecialchars($_POST['content'], ENT_QUOTES);
+  } else {
+    $firstname = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $content = mysqli_real_escape_string($conn, $_POST['content']);
+  }
 
   $res = mysqli_query($conn, 'INSERT INTO feedback (`firstname`, `email`,`content`) VALUES (\'' . $firstname .'\', \'' . $email . '\', \'' . $content . '\')');
   if($res !== false) {
@@ -18,3 +23,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   header('Location: /');
   exit();
 }
+?>
+
+<a href="/reviews.php">Reviews ansehen</a>

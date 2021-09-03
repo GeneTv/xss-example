@@ -11,6 +11,11 @@
       flex-direction: column;
       margin-bottom: 10px;
     }
+    footer {
+      position: fixed;
+      bottom: 0;
+      padding: 10px 50px;
+    }
   </style>
 </head>
 <body>
@@ -26,7 +31,7 @@
           <legend>Persönliches</legend>
           <div class="form__group">
             <label for="name">Name:</label>
-            <input type="text" name="name" placeholder="Max Muster" required>
+            <input type="text" name="name" placeholder="Max Muster" required autofocus>
           </div>
 
           <div class="form__group">
@@ -37,11 +42,15 @@
 
         <div class="form__group">
           <label for="email">Feedback:</label>
-          <textarea type="email" name="email" placeholder="Ihr Feedback..." rows="8" required></textarea>
+          <textarea type="content" name="content" placeholder="Ihr Feedback..." rows="8" required></textarea>
         </div>
       </div>
       <button type="submit">Feedback absenden</button>
     </form>
   </div>
+
+  <footer>
+    <a href="/reviews.php">Reviews ansehen</a>
+  </footer>
 </body>
 </html>
