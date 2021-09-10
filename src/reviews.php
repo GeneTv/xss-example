@@ -27,10 +27,18 @@
     include 'mysql.db.php';
 
     $result = mysqli_query($conn, 'SELECT * FROM feedback');
-    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): ?>
+    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)):
+    
+      if($exampleIsSecure) {
+        $firstname = htmlspecialchars($row['firstname'], ENT_QUOTES);
+        $email = htmlspecialchars($row['email'], ENT_QUOTES);
+        $content = htmlspecialchars($row['content'], ENT_QUOTES);
+      }
+
+    ?>
     <div class="card">
-      <p class="card__name"><?php echo $row['firstname'].' ('.$row['email'].')'; ?></p>
-      <p class="card__content"><?php echo $row['content']; ?></p>
+      <p class="card__name"><?php echo $firstname.' ('.$email.')'; ?></p>
+      <p class="card__content"><?php echo $content; ?></p>
     </div>
     <?php endwhile; ?>
 

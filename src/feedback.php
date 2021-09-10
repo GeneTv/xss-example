@@ -2,14 +2,21 @@
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
   include 'mysql.db.php';
 
-  if(false) { // true: secure ¦ false: insecure
-    $firstname = htmlspecialchars($_POST['name'], ENT_QUOTES);
-    $email = htmlspecialchars($_POST['email'], ENT_QUOTES);
-    $content = htmlspecialchars($_POST['content'], ENT_QUOTES);
-  } else {
-    $firstname = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $content = mysqli_real_escape_string($conn, $_POST['content']);
+  $firstname = mysqli_real_escape_string($conn, $_POST['name']);
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+  $content = mysqli_real_escape_string($conn, $_POST['content']);
+
+
+  if($exampleIsSecure) {
+
+    /**
+     * The secure example will escape all html special characters. This will
+     * prevent (especially html tags) from being stored into the database, as html string.
+     */
+    $firstname = htmlspecialchars($ffirstname, ENT_QUOTES);
+    $email = htmlspecialchars($email, ENT_QUOTES);
+    $content = htmlspecialchars($content, ENT_QUOTES);
+
   }
 
   $res = mysqli_query($conn, 'INSERT INTO feedback (`firstname`, `email`,`content`) VALUES (\'' . $firstname .'\', \'' . $email . '\', \'' . $content . '\')');
