@@ -24,5 +24,5 @@ FLUSH PRIVILEGES;
 
 ## Project Setup
 ### Prerequisites
-- Webserver with Php support installed
-- MySQL server installed
+- Webserver with Php support
+- MySQL server
