@@ -1,13 +1,15 @@
 <?php
-$dbHost = 'localhost'; // Yes, steal my super important data
-$dbUsername = 'user';
-$dbPassword = 'supersecure';
+# MySQL server details
+$dbHost = 'localhost';
 $dbName = 'main';
 
-$conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
+# MySQL credentials
+$dbUsername = 'user';
+$dbPassword = 'supersecure';
 
-
-/**
- * This will define if the example should be secure and preventing xss.
- */
+# This determines if the application is secured against xss
 $exampleIsSecure = true;
+
+
+# --- END OF CONFIG --- #
+$conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
