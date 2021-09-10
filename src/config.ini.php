@@ -4,8 +4,8 @@ $dbHost = 'localhost';
 $dbName = 'main';
 
 # MySQL credentials
-$dbUsername = 'user';
-$dbPassword = 'supersecure';
+$dbUsername = 'user_here';
+$dbPassword = 'password_here';
 
 # This determines if the application is secured against xss
 $exampleIsSecure = true;
