@@ -9,7 +9,5 @@ $conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
 
 /**
  * This will define if the example should be secure and preventing xss.
- * 
- * true = 
  */
-$exampleIsSecure = false;
+$exampleIsSecure = true;

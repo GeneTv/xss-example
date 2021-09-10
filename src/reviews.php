@@ -28,11 +28,15 @@
 
     $result = mysqli_query($conn, 'SELECT * FROM feedback');
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)):
+
+      $firstname = $row['firstname'];
+      $email = $row['email'];
+      $content = $row['content'];
     
       if($exampleIsSecure) {
-        $firstname = htmlspecialchars($row['firstname'], ENT_QUOTES);
-        $email = htmlspecialchars($row['email'], ENT_QUOTES);
-        $content = htmlspecialchars($row['content'], ENT_QUOTES);
+        $firstname = htmlspecialchars($firstname, ENT_QUOTES);
+        $email = htmlspecialchars($email, ENT_QUOTES);
+        $content = htmlspecialchars($content, ENT_QUOTES);
       }
 
     ?>

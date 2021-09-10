@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
      * The secure example will escape all html special characters. This will
      * prevent (especially html tags) from being stored into the database, as html string.
      */
-    $firstname = htmlspecialchars($ffirstname, ENT_QUOTES);
+    $firstname = htmlspecialchars($firstname, ENT_QUOTES);
     $email = htmlspecialchars($email, ENT_QUOTES);
     $content = htmlspecialchars($content, ENT_QUOTES);
 
