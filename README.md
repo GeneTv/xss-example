@@ -1,5 +1,5 @@
-# xss-example
-Really simple example for cross-site scripting. The example contains vulnerable and secure code which can be configured in `src/config.ini.php`
+# XSS Demo Project
+Really simple example for cross-site scripting, written in php. The example contains vulnerable and secure code and should demonstrate the basics of xss and important security implementations.
 
 ## Project Setup
 ### Prerequisites
