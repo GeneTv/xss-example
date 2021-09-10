@@ -1,5 +1,5 @@
 # xss-example
-Really simple example for cross-site scripting. Contains a bad and a good example.
+Really simple example for cross-site scripting. The example contains vulnerable and secure code which can be configured in `src/config.ini.php`
 
 ## MySQL Setup
 ### Create Table

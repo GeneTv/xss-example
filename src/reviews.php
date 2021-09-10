@@ -24,7 +24,7 @@
   <body>
     <h1>User Feedback</h1>
     <?php
-    include 'mysql.db.php';
+    include 'config.ini.php';
 
     $result = mysqli_query($conn, 'SELECT * FROM feedback');
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)):
